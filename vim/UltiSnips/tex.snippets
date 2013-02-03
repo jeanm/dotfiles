@@ -1,0 +1,25 @@
+extends texmath
+
+snippet it "Italic"
+\textit{$1}$0
+endsnippet
+
+snippet bf "Bold"
+\textbf{$1}$0
+endsnippet
+
+snippet em "Emphasize"
+\emph{$1}$0
+endsnippet
+
+snippet sc "Small caps"
+\textsc{$1}$0
+endsnippet
+
+snippet "be(gin)?" "begin/end environment" br
+\begin{${1:something}}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
+# vim:ft=snippets:
