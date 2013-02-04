@@ -57,7 +57,7 @@ if has('gui_running')
 endif
 
 " Colour
-set background=dark
+"set t_Co=256
 color molokai
 highlight NonText ctermfg=LightGray guifg=#CACACA gui=NONE cterm=NONE
 highlight SpecialKey ctermfg=red guifg=red gui=NONE cterm=NONE
