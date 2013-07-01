@@ -41,10 +41,10 @@ if has('gui_running')
   set guioptions=aAce
   if has('gui_macvim')
     set guifont=PragmataPro:h14
+    set fuoptions=maxvert,background:Normal
   else
     set guifont=PragmataPro\ 11
   endif
-  set fuoptions=maxvert,background:Normal
 endif
 
 " Colour
