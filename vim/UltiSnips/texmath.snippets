@@ -56,6 +56,10 @@ snippet p "" w
 \pi
 endsnippet
 
+snippet r "" w
+\rho
+endsnippet
+
 snippet s "" w
 \sigma
 endsnippet
@@ -147,11 +151,11 @@ snippet alinn "align environment no number" b
 endsnippet
 
 snippet der "derivative" w
-\frac{\text{d}$1}{\text{d}$2} $0
+\frac{\text{d}$1}{\text{d}$2}$0
 endsnippet
 
 snippet pder "partial derivative" w
-\frac{\partial $1}{\partial $2} $0
+\frac{\partial $1}{\partial $2}$0
 endsnippet
 
 snippet defint "definite integral" w
@@ -163,7 +167,19 @@ snippet indint "indefinite integral" w
 endsnippet
 
 snippet cal "calligraphy font" w
-\mathcal{$1} $0
+\mathcal{$1}$0
+endsnippet
+
+snippet paren "parentheses" w
+\left($1\right)$0
+endsnippet
+
+snippet sqbr "square brackets" w
+\left[$1\right]$0
+endsnippet
+
+snippet cubr "curly brackets" w
+\left\{$1\right\}$0
 endsnippet
 
 # vim:ft=snippets:
