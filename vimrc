@@ -9,7 +9,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tomasr/molokai'
 
 filetype plugin indent on
@@ -66,9 +65,3 @@ let g:LatexBox_viewer="open -a Skim"
 
 " UltiSnips
 let g:UltiSnipsDontReverseSearchPath="1"
-
-" RainbowParentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
