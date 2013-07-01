@@ -40,7 +40,11 @@ inoremap jk <Esc>
 if has('gui_running')
   set antialias
   set guioptions=aAce
-  set guifont=PragmataPro:h14
+  if has('gui_macvim')
+    set guifont=PragmataPro:h14
+  else
+    set guifont=PragmataPro\ 11
+  endif
   set fuoptions=maxvert,background:Normal
 endif
 
