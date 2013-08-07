@@ -68,3 +68,5 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+" Markdown
+autocmd BufNew,BufNewFile,BufRead *.md,*.markdown set filetype=markdown
