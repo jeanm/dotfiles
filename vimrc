@@ -6,7 +6,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'tomasr/molokai'
@@ -54,7 +53,7 @@ highlight NonText ctermfg=LightGray guifg=#CACACA gui=NONE cterm=NONE
 highlight SpecialKey ctermfg=red guifg=red gui=NONE cterm=NONE
 
 " Tabs and invisibles
-set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set listchars=tab:»\ ,trail:·
 set list
 
@@ -65,3 +64,7 @@ let g:LatexBox_viewer="open -a Skim"
 
 " UltiSnips
 let g:UltiSnipsDontReverseSearchPath="1"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
