@@ -27,7 +27,7 @@
 (setq org-log-done t)
 
 ;; Theme
-(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 (add-hook 'css-mode-hook 'rainbow-mode)
 (set-default-font "PragmataPro-14")
 
@@ -38,6 +38,7 @@
 ;; Line numbers
 (require 'linum)
 (global-linum-mode 1)
+(column-number-mode 1)
 
 ;; Highlight current line
 
@@ -81,6 +82,13 @@
   (setq mouse-sel-mode t)
   )
 
+;; Fix scrolling
+(setq redisplay-dont-pause t
+  scroll-margin 1
+  scroll-step 1
+  scroll-conservatively 10000
+  scroll-preserve-screen-position 1)
+
 ;; Rainbow-delimiters and Autopair
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -99,15 +107,3 @@
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/Dropbox/academia.org"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
