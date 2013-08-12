@@ -1,4 +1,3 @@
-
 (package-initialize)
 
 ;; Fix path
@@ -39,6 +38,7 @@
 ;; Line numbers
 (require 'linum)
 (global-linum-mode 1)
+(setq linum-format "%d  ")
 (column-number-mode 1)
 
 ;; Highlight current line
