@@ -40,8 +40,7 @@
 	 ((agenda "" ((org-agenda-ndays 7)))
 	  (todo "NEXT")
 	  (todo "SOMEDAY")
-	  (todo "WAITING")
-	  (stuck "")))))
+	  (todo "WAITING"))))
 (setq org-stuck-projects '("+LEVEL=1" ("NEXT" "TODO" "DONE")))
 
 ;; Theme
