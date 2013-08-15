@@ -25,23 +25,27 @@
 (setq epa-file-select-keys nil)
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
 
+;; Tramp
+(require 'tramp)
+(setq tramp-default-method "scp")
+
 ;; Org-mode
 (setq org-agenda-files '("~/Dropbox/agenda.org"))
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 (setq org-hide-leading-stars t)
-(setq org-todo-keywords '((type "TODO" "NEXT" "WAITING" "SOMEDAY" "DONE")))
+(setq org-todo-keywords '((type "TODO" "DEFERRED" "WAITING" "DONE")))
 (setq org-todo-keyword-faces
-           '(("WAITING" . org-block) ("SOMEDAY" . org-block) ("DONE" . org-done)))
+           '(("WAITING" . org-block) ("DEFERRED" . org-block) ("DONE" . org-done)))
 (setq org-agenda-custom-commands 
-      '(("n" "Show NEXT todo items" todo "NEXT")
+      '(("n" "Show TODO items" todo "TODO")
 	("w" "Weekly review"
 	 ((agenda "" ((org-agenda-ndays 7)))
-	  (todo "NEXT")
-	  (todo "SOMEDAY")
+	  (todo "TODO")
+	  (todo "DEFERRED")
 	  (todo "WAITING")))))
-(setq org-stuck-projects '("+LEVEL=1" ("NEXT" "TODO" "DONE")))
+(setq org-stuck-projects '("+LEVEL=1" ("TODO" "DONE") nil "SCHEDULED:\\|DEADLINE:"))
 
 ;; Theme
 (load-theme 'solarized-dark t)
