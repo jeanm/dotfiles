@@ -38,9 +38,10 @@
       '(("n" "Show NEXT todo items" todo "NEXT")
 	("w" "Weekly review"
 	 ((agenda "" ((org-agenda-ndays 7)))
-	  (stuck "")
+	  (todo "NEXT")
 	  (todo "SOMEDAY")
-	  (todo "WAITING")))))
+	  (todo "WAITING")
+	  (stuck "")))))
 (setq org-stuck-projects '("+LEVEL=1" ("NEXT" "TODO" "DONE")))
 
 ;; Theme
