@@ -32,7 +32,7 @@ set autoindent
 " Keys
 nnoremap j gj
 nnoremap k gk
-inoremap kj <Esc>
+inoremap jj <Esc>
 
 " GUI options
 if has('gui_running')
