@@ -67,10 +67,10 @@
 
 (global-hl-line-mode 1)
 
-;; ;; EVIL!
- (require 'evil)
- (evil-mode 1)
- (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up) ; make C-u behave as in Vim
+;; EVIL!
+(require 'evil)
+(evil-mode 1)
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up) ; make C-u behave as in Vim
 
 ;; make jj behave as ESC (source: github.com/bergmannf/dotfiles)
 (define-key evil-insert-state-map "j" #'cofi/maybe-exit)
