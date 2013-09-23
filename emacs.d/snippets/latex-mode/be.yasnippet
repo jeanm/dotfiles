@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Jean Maillard <jean@maillard.it>
+# key: be
+# group: environments
+# name: create environment
+# --
+\begin{${1:$$(yas/choose-value (mapcar 'car (LaTeX-environment-list)))}}
+$0
+\end{$1}
