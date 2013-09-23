@@ -133,9 +133,3 @@
 
 ;; Mail
 (setq send-mail-function 'sendmail-send-it)
-
-
-;; Show org-agenda
-(setq inhibit-splash-screen t)
-(org-agenda nil "w")
-(delete-other-windows)
