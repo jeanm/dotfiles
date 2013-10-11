@@ -18,6 +18,7 @@
 (setq default-frame-alist '(
                 (width . 90)
                 (height . 40) ))
+(setq global-visual-line-mode 1)
 
 ;; Encryption
 (require 'epa-file)
@@ -48,7 +49,7 @@
 (setq org-stuck-projects '("+LEVEL=1" ("TODO" "DONE") nil "SCHEDULED:\\|DEADLINE:"))
 
 ;; Theme
-(load-theme 'solarized-dark t)
+(load-theme 'monokai t)
 (add-hook 'css-mode-hook 'rainbow-mode)
 (set-default-font "PragmataPro-14")
 
@@ -58,13 +59,9 @@
 (scroll-bar-mode -1)
 
 ;; Line numbers
-(require 'linum)
-(global-linum-mode 1)
-(setq linum-format "%d  ")
 (column-number-mode 1)
 
 ;; Highlight current line
-
 (global-hl-line-mode 1)
 
 ;; EVIL!
@@ -118,12 +115,19 @@
 (require 'autopair)
 (autopair-global-mode)
 
-;; Ido mode
+;; Ido mode, iswitchb
 (require 'ido)
 (ido-mode t)
+(iswitchb-mode 1)
+
+;; minimap
+(require 'minimap)
+(setq minimap-update-delay 0)
+
 
 ;; Snippets
 (require 'yasnippet)
+(setq require-final-newline nil)
 (yas-global-mode 1)
 
 ;; Markdown
