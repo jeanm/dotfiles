@@ -69,24 +69,19 @@
 (evil-mode 1)
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up) ; make C-u behave as in Vim
 
-;; make jj behave as ESC (source: github.com/bergmannf/dotfiles)
-(define-key evil-insert-state-map "j" #'cofi/maybe-exit)
+;; key-chord
+(require 'key-chord)
+(key-chord-mode 1)
 
-(evil-define-command cofi/maybe-exit ()
-  :repeat change
+;; make kj behave as ESC
+(key-chord-define evil-insert-state-map "kj" 'evil-normal-state)
+
+(defun my-colon-call ()
   (interactive)
-  (let ((modified (buffer-modified-p)))
-    (insert "j")
-    (let ((evt (read-event (format "Insert %c to exit insert state" ?j)
-                           nil 0.5)))
-      (cond
-       ((null evt) (message ""))
-       ((and (integerp evt) (char-equal evt ?j))
-        (delete-char -1)
-        (set-buffer-modified-p modified)
-        (push 'escape unread-command-events))
-       (t (setq unread-command-events (append unread-command-events
-                                             (list evt))))))))
+  (let ((last-command-event ?\())
+    (call-interactively (key-binding ":"))))
+
+(key-chord-define evil-normal-state-map "iu" 'my-colon-call)
 
 ;; Enable mouse support
 (unless window-system
