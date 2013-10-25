@@ -23,8 +23,11 @@
 ;; Encryption
 (require 'epa-file)
 (epa-file-enable)
-(setq epa-file-select-keys nil)
-(setq epa-file-cache-passphrase-for-symmetric-encryption t)
+
+;; LaTeX
+;(require 'auctex)
+(require 'auctex-latexmk)
+(auctex-latexmk-setup)
 
 ;; Tramp
 (require 'tramp)
@@ -76,12 +79,12 @@
 ;; make kj behave as ESC
 (key-chord-define evil-insert-state-map "kj" 'evil-normal-state)
 
-(defun my-colon-call ()
-  (interactive)
-  (let ((last-command-event ?\())
-    (call-interactively (key-binding ":"))))
-
-(key-chord-define evil-normal-state-map "iu" 'my-colon-call)
+;(defun my-colon-call ()
+;  (interactive)
+;  (let ((last-command-event ?\())
+;    (call-interactively (key-binding ":"))))
+;
+;(key-chord-define evil-normal-state-map "iu" 'my-colon-call)
 
 ;; Enable mouse support
 (unless window-system
@@ -114,11 +117,6 @@
 (require 'ido)
 (ido-mode t)
 (iswitchb-mode 1)
-
-;; minimap
-(require 'minimap)
-(setq minimap-update-delay 0)
-
 
 ;; Snippets
 (require 'yasnippet)
