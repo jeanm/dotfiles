@@ -24,6 +24,9 @@
 (require 'epa-file)
 (epa-file-enable)
 
+;; ispell
+(setq ispell-program-name "aspell")
+
 ;; LaTeX
 ;(require 'auctex)
 (require 'auctex-latexmk)
@@ -38,7 +41,9 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+(setq org-startup-truncated nil)
 (setq org-hide-leading-stars t)
+(setq org-ellipsis " +" )
 (setq org-todo-keywords '((type "TODO" "DEFERRED" "WAITING" "DONE")))
 (setq org-todo-keyword-faces
            '(("WAITING" . org-block) ("DEFERRED" . org-block) ("DONE" . org-done)))
@@ -110,8 +115,7 @@
 ;; Rainbow-delimiters and Autopair
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(require 'autopair)
-(autopair-global-mode)
+(electric-pair-mode 1)
 
 ;; Ido mode, iswitchb
 (require 'ido)
