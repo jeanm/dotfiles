@@ -75,6 +75,7 @@
 ;; EVIL!
 (require 'evil)
 (evil-mode 1)
+(setq evil-want-fine-undo t)
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up) ; make C-u behave as in Vim
 
 ;; key-chord
