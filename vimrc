@@ -5,9 +5,6 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'tomasr/molokai'
 
 filetype plugin indent on
@@ -19,7 +16,6 @@ set showcmd
 set wildmenu
 set number
 set wrap
-set autochdir
 set mouse=a
 
 " Search
@@ -57,16 +53,9 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set listchars=tab:»\ ,trail:·
 set list
 
-" LaTeX-Box
-let g:LatexBox_output_type="pdf"
-let g:LatexBox_latexmk_options="-pdf"
-let g:LatexBox_viewer="open -a Skim"
-
-" UltiSnips
-let g:UltiSnipsDontReverseSearchPath="1"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 " Markdown
 autocmd BufNew,BufNewFile,BufRead *.md,*.markdown set filetype=markdown
+
+" Encryption
+set cm=blowfish
+autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup viminfo= nobackup noshelltemp history=0 secure | endif
