@@ -61,6 +61,7 @@ set list
 let g:LatexBox_output_type="pdf"
 let g:LatexBox_latexmk_options="-pdf"
 let g:LatexBox_viewer="open -a Skim"
+let g:LatexBox_latexmk_async=1
 
 " UltiSnips
 let g:UltiSnipsDontReverseSearchPath="1"
