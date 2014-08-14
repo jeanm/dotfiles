@@ -9,6 +9,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'tomasr/molokai'
+Bundle 'Yggdroot/indentLine'
 
 filetype plugin indent on
 
@@ -53,9 +54,13 @@ highlight NonText ctermfg=LightGray guifg=#CACACA gui=NONE cterm=NONE
 highlight SpecialKey ctermfg=red guifg=red gui=NONE cterm=NONE
 
 " Tabs and invisibles
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set listchars=tab:»\ ,trail:·
 set list
+let g:indentLine_color_gui="red"
+let g:indentLine_color_term="red"
+let g:indentLine_char = '|'
+set colorcolumn=81
 
 " LaTeX-Box
 let g:LatexBox_output_type="pdf"
@@ -71,3 +76,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Markdown
 autocmd BufNew,BufNewFile,BufRead *.md,*.markdown set filetype=markdown
+
+" Python
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
