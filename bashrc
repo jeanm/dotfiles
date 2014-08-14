@@ -2,6 +2,8 @@ export PS1="\[\033[1;32m\]\u \[\033[1;33m\]\h \[\033[1;31m\]\w \[\033[1;33m\]\$\
 export PROMPT_DIRTRIM=2
 export HISTCONTROL=ignoreboth
 
-if [ -f ~/.git-completion.bash ]; then
-    . ~/.git-completion.bash
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+  export PS1="\[\033[1;32m\]\u \[\033[1;33m\]\h \[\033[1;31m\]\w\[\033[1;32m\]\$(__git_ps1) \[\033[1;33m\]\$\[\033[0m\] "
 fi
+
