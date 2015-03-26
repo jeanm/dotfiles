@@ -1,21 +1,15 @@
 set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/vundle'
-Plugin 'kien/ctrlp.vim'
-"Plugin 'SirVer/ultisnips'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'tomasr/molokai'
-
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/vundle'
+Plug 'SirVer/ultisnips'
+Plug 'tomasr/molokai'
+Plug 'Yggdroot/indentLine'
+Plug 'luochen1990/rainbow'
+call plug#end()
 
 filetype plugin indent on
 
 " Misc
-set visualbell
 set ruler
 set showcmd
 set wildmenu
@@ -23,9 +17,11 @@ set number
 set wrap
 set autochdir
 set mouse=a
+set showmatch
+set hidden
 
 " Search
-set incsearch hlsearch showmatch ignorecase smartcase gdefault
+set incsearch ignorecase smartcase gdefault
 
 " Syntax
 syntax on
@@ -34,7 +30,10 @@ set autoindent
 " Keys
 nnoremap j gj
 nnoremap k gk
-inoremap jj <Esc>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " GUI options
 if has('gui_running')
@@ -49,20 +48,21 @@ if has('gui_running')
 endif
 
 " Colour
-"set t_Co=256
+set t_Co=256
 color molokai
+set background=dark
+set colorcolumn=81
 highlight NonText ctermfg=LightGray guifg=#CACACA gui=NONE cterm=NONE
 highlight SpecialKey ctermfg=red guifg=red gui=NONE cterm=NONE
+let g:rainbow_active = 0
 
 " Tabs and invisibles
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set listchars=tab:»\ ,trail:·
 set list
-
-" LaTeX-Box
-let g:LatexBox_output_type="pdf"
-let g:LatexBox_latexmk_options="-pdf"
-let g:LatexBox_viewer="open -a Skim"
+let g:indentLine_color_gui="red"
+let g:indentLine_color_term="red"
+let g:indentLine_char = '|'
 
 " UltiSnips
 let g:UltiSnipsDontReverseSearchPath="1"
