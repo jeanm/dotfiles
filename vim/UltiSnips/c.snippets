@@ -20,11 +20,11 @@ ${VISUAL}${0}
 #endif
 endsnippet
 
-snippet inc "#include local header (inc)"
+snippet Inc "#include local header (Inc)"
 #include "${1:`!p snip.rv = snip.basename + '.h'`}"
 endsnippet
 
-snippet Inc "#include <> (Inc)"
+snippet inc "#include <> (inc)"
 #include <${1:.h}>
 endsnippet
 
@@ -57,7 +57,7 @@ for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 endsnippet
 
 snippet enum "Enumeration"
-enum ${1:name} { $0 };
+typedef enum ${1:name} { $0 } ${2:Name};
 endsnippet
 
 snippet once "Include header once only guard"
@@ -77,7 +77,7 @@ ${VISUAL}${0}
 endsnippet
 
 snippet td "Typedef"
-typedef ${1:int} ${2:MyCustomType};
+typedef ${1:int} ${2:Name};
 endsnippet
 
 snippet wh "while loop"
@@ -127,9 +127,9 @@ printf("${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2
 endsnippet
 
 snippet st "struct"
-struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
+typedef struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
 	${0:/* data */}
-};
+} ${2:Name};
 endsnippet
 
 snippet fun "function" b

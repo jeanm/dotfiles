@@ -125,4 +125,32 @@ endsnippet
 snippet sc "Small caps"
 \textsc{$1}$0
 endsnippet
+
+snippet eq "Equation"
+\begin{equation}
+	$1
+\end{equation}
+$0
+endsnippet
+
+snippet eqnn "Equation (not numbered)"
+\begin{equation*}
+	$1
+\end{equation*}
+$0
+endsnippet
+
+snippet ali "Aligned equation"
+\begin{align}
+	${1:left} &${2:right}\\
+	$0
+\end{align}
+endsnippet
+
+snippet alinn "Aligned equation (not numbered)"
+\begin{align*}
+	${1:left} &${2:right}\\
+	$0
+\end{align*}
+endsnippet
 # vim:ft=snippets:
