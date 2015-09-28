@@ -23,8 +23,14 @@
 ;; Encryption
 (require 'epa-file)
 (epa-file-enable)
-(setq epa-file-select-keys nil)
-(setq epa-file-cache-passphrase-for-symmetric-encryption t)
+
+;; ispell
+(setq ispell-program-name "aspell")
+
+;; LaTeX
+;(require 'auctex)
+(require 'auctex-latexmk)
+(auctex-latexmk-setup)
 
 ;; Tramp
 (require 'tramp)
@@ -35,7 +41,9 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+(setq org-startup-truncated nil)
 (setq org-hide-leading-stars t)
+(setq org-ellipsis " +" )
 (setq org-todo-keywords '((type "TODO" "DEFERRED" "WAITING" "DONE")))
 (setq org-todo-keyword-faces
            '(("WAITING" . org-block) ("DEFERRED" . org-block) ("DONE" . org-done)))
@@ -67,6 +75,7 @@
 ;; EVIL!
 (require 'evil)
 (evil-mode 1)
+(setq evil-want-fine-undo t)
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up) ; make C-u behave as in Vim
 
 ;; key-chord
@@ -76,12 +85,12 @@
 ;; make kj behave as ESC
 (key-chord-define evil-insert-state-map "kj" 'evil-normal-state)
 
-(defun my-colon-call ()
-  (interactive)
-  (let ((last-command-event ?\())
-    (call-interactively (key-binding ":"))))
-
-(key-chord-define evil-normal-state-map "iu" 'my-colon-call)
+;(defun my-colon-call ()
+;  (interactive)
+;  (let ((last-command-event ?\())
+;    (call-interactively (key-binding ":"))))
+;
+;(key-chord-define evil-normal-state-map "iu" 'my-colon-call)
 
 ;; Enable mouse support
 (unless window-system
@@ -107,18 +116,12 @@
 ;; Rainbow-delimiters and Autopair
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(require 'autopair)
-(autopair-global-mode)
+(electric-pair-mode 1)
 
 ;; Ido mode, iswitchb
 (require 'ido)
 (ido-mode t)
 (iswitchb-mode 1)
-
-;; minimap
-(require 'minimap)
-(setq minimap-update-delay 0)
-
 
 ;; Snippets
 (require 'yasnippet)
