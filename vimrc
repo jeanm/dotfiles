@@ -84,13 +84,13 @@ let g:lightline = {
     \ }
 
 " Tabs and invisibles
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set expandtab tabstop=4 shiftwidth=4
 set listchars=tab:»\ ,trail:·
 set list
 let g:indentLine_color_gui="red"
 let g:indentLine_color_term="red"
 let g:indentLine_char = '|'
-set colorcolumn=81
+set colorcolumn=80
 
 " UltiSnips
 let g:UltiSnipsDontReverseSearchPath="1"
@@ -98,11 +98,19 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-" NeoMake
-autocmd! BufWritePost * Neomake
-
 " Markdown
 autocmd BufNew,BufNewFile,BufRead *.md,*.markdown set filetype=markdown
 
 " Python
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
+" Neomake
+autocmd! BufWritePost * Neomake
+
+" Leader key
+let mapleader = "\<Space>"
+nnoremap <Leader><CR> :nohl<CR>
+nnoremap <Leader>m :w<CR>:Neomake<CR>
+nnoremap <Leader>M :w<CR>:Neomake!<CR>
+nnoremap <Leader>s :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
