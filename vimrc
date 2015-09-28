@@ -4,7 +4,7 @@ Plug 'SirVer/ultisnips'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'JuliaLang/julia-vim'
-Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
@@ -98,14 +98,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" NeoMake
+autocmd! BufWritePost * Neomake
 
 " Markdown
 autocmd BufNew,BufNewFile,BufRead *.md,*.markdown set filetype=markdown
