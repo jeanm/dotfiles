@@ -1,25 +1,12 @@
 set nocompatible
-<<<<<<< HEAD
 call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'JuliaLang/julia-vim'
 Plug 'scrooloose/syntastic'
+Plug 'Yggdroot/indentLine'
 call plug#end()
-=======
-filetype off
-
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'tomasr/molokai'
-Bundle 'Yggdroot/indentLine'
->>>>>>> 886ead5e3b3ecd656964b1dd834407c3d52ff85d
 
 " Syntax
 filetype plugin indent on
@@ -47,14 +34,10 @@ set gdefault
 " Keys
 nnoremap j gj
 nnoremap k gk
-<<<<<<< HEAD
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-=======
-inoremap kj <Esc>
->>>>>>> 886ead5e3b3ecd656964b1dd834407c3d52ff85d
 
 " Appearance - Interface
 set number
@@ -100,8 +83,6 @@ let g:lightline = {
     \ 'subseparator': { 'left': '|', 'right': '|' }
     \ }
 
-<<<<<<< HEAD
-=======
 " Tabs and invisibles
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set listchars=tab:»\ ,trail:·
@@ -110,13 +91,6 @@ let g:indentLine_color_gui="red"
 let g:indentLine_color_term="red"
 let g:indentLine_char = '|'
 set colorcolumn=81
-
-" LaTeX-Box
-let g:LatexBox_output_type="pdf"
-let g:LatexBox_latexmk_options="-pdf"
-let g:LatexBox_viewer="open -a Skim"
-let g:LatexBox_latexmk_async=1
->>>>>>> 886ead5e3b3ecd656964b1dd834407c3d52ff85d
 
 " UltiSnips
 let g:UltiSnipsDontReverseSearchPath="1"
