@@ -1,31 +1,34 @@
 set nocompatible
 call plug#begin('~/.vim/plugged')
-Plug 'gmarik/vundle'
 Plug 'SirVer/ultisnips'
-Plug 'tomasr/molokai'
-Plug 'Yggdroot/indentLine'
-Plug 'luochen1990/rainbow'
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
+Plug 'JuliaLang/julia-vim'
+Plug 'scrooloose/syntastic'
 call plug#end()
 
+" Syntax
 filetype plugin indent on
+syntax on
+set autoindent
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set showmatch
 
-" Misc
-set ruler
-set showcmd
+" Sane defaults
 set wildmenu
-set number
 set wrap
 set autochdir
 set mouse=a
-set showmatch
-set hidden
+
+" Sessions
+set ssop=buffers,sesdir,tabpages,localoptions
 
 " Search
-set incsearch ignorecase smartcase gdefault
-
-" Syntax
-syntax on
-set autoindent
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
 
 " Keys
 nnoremap j gj
@@ -35,7 +38,25 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" GUI options
+" Appearance - Interface
+set number
+set ruler
+set listchars=tab:»\ ,trail:·
+set list
+set cursorline
+set colorcolumn=81
+let g:tex_conceal= 'adgm'
+
+" Appearance - Colours
+color gruvbox
+set background=dark
+highlight NonText ctermfg=LightGray guifg=#CACACA gui=NONE cterm=NONE
+highlight SpecialKey ctermfg=red guifg=red gui=NONE cterm=NONE
+if !has('gui_running')
+    set t_Co=256
+endif
+
+" Appearance - GUI
 if has('gui_running')
   set antialias
   set guioptions=aAce
@@ -47,28 +68,35 @@ if has('gui_running')
   endif
 endif
 
-" Colour
-set t_Co=256
-color molokai
-set background=dark
-set colorcolumn=81
-highlight NonText ctermfg=LightGray guifg=#CACACA gui=NONE cterm=NONE
-highlight SpecialKey ctermfg=red guifg=red gui=NONE cterm=NONE
+" Appearance - Plugins
 let g:rainbow_active = 0
-
-" Tabs and invisibles
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-set listchars=tab:»\ ,trail:·
-set list
 let g:indentLine_color_gui="red"
 let g:indentLine_color_term="red"
 let g:indentLine_char = '|'
+let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ 'component': {
+    \   'readonly': '%{&readonly?"x":""}',
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '|', 'right': '|' }
+    \ }
+
 
 " UltiSnips
 let g:UltiSnipsDontReverseSearchPath="1"
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Markdown
 autocmd BufNew,BufNewFile,BufRead *.md,*.markdown set filetype=markdown
