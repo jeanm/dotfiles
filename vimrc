@@ -6,6 +6,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'JuliaLang/julia-vim'
 Plug 'benekastah/neomake'
 Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 " Syntax
@@ -103,9 +104,6 @@ autocmd BufNew,BufNewFile,BufRead *.md,*.markdown set filetype=markdown
 
 " Python
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
-
-" Neomake
-autocmd! BufWritePost * Neomake
 
 " Leader key
 let mapleader = "\<Space>"
