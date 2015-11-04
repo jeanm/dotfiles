@@ -21,6 +21,7 @@ set wildmenu
 set wrap
 set autochdir
 set mouse=a
+set backspace=2
 
 " Sessions
 set ssop=buffers,sesdir,tabpages,localoptions
