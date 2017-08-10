@@ -3,6 +3,7 @@ set-face MatchingChar black,yellow
 
 hook global WinCreate .* %{
     add-highlighter number_lines
+    add-highlighter wrap
     add-highlighter show_matching
     add-highlighter show_whitespaces
 }
