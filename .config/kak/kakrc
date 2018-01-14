@@ -18,6 +18,7 @@ map global user n ':lint-next-error<ret>'
 map global user N ':lint-prev-error<ret>'
 map global user l ':lint<ret>'
 hook global WinSetOption filetype=python %{
+    set window lintcmd 'flake8 --filename=* --format="%(path)s:%(row)d:%(col)d: error: %(text)s"'
     lint-enable
     lint
 }
