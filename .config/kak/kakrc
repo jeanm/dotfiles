@@ -13,3 +13,11 @@ map global insert <backtab> '<a-;><lt>'
 
 set global indentwidth 4
 set global scrolloff 3,5
+
+map global user n ':lint-next-error<ret>'
+map global user N ':lint-prev-error<ret>'
+map global user l ':lint<ret>'
+hook global WinSetOption filetype=python %{
+    lint-enable
+    lint
+}
