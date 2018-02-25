@@ -2,10 +2,10 @@ colorscheme gruvbox
 set-face MatchingChar black,yellow
 
 hook global WinCreate .* %{
-    add-highlighter number_lines
-    add-highlighter wrap
-    add-highlighter show_matching
-    add-highlighter show_whitespaces
+    add-highlighter global number_lines
+    add-highlighter global wrap
+    add-highlighter global show_matching
+    add-highlighter global show_whitespaces
 }
 
 map global insert <tab> '<a-;><gt>'
@@ -17,6 +17,7 @@ set global scrolloff 3,5
 map global user n ':lint-next-error<ret>'
 map global user N ':lint-prev-error<ret>'
 map global user l ':lint<ret>'
+
 hook global WinSetOption filetype=python %{
     set window lintcmd 'flake8 --filename=* --format="%(path)s:%(row)d:%(col)d: error: %(text)s"'
     lint-enable
