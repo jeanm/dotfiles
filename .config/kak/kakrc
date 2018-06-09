@@ -1,14 +1,10 @@
 colorscheme gruvbox
-set-face MatchingChar black,yellow
 
 hook global WinCreate .* %{
     add-highlighter global number_lines
     add-highlighter global wrap
     add-highlighter global show_matching
 }
-
-map global insert <tab> '<a-;><gt>'
-map global insert <backtab> '<a-;><lt>'
 
 set global indentwidth 4
 set global scrolloff 3,5
