@@ -1,0 +1,14 @@
+-i
+-o "%(upload_date)s %(title)s.%(ext)s"
+--download-archive ./.archive.txt
+--yes-playlist
+
+--sub-lang fr,it,en
+--write-sub
+--convert-subs srt
+--embed-subs
+
+--format best
+--merge-output-format mkv
+--recode-video mkv
+--add-metadata
