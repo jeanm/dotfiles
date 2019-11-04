@@ -4,8 +4,8 @@ export PROMPT_DIRTRIM=2
 export HISTCONTROL=ignoreboth:erasedups
 
 alias vim=nvim
-export EDITOR=vim
+export EDITOR=nvim
 set -o vi
-export VISUAL=vim
+export VISUAL=nvim
 
-export PATH=~/.cargo/bin:$PATH
+export PATH=$PATH
